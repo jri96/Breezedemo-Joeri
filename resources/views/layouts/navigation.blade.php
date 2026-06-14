@@ -57,6 +57,15 @@
                 </div>
                 @endif
 
+                @if (Auth::check() && Auth::user()->rolename === 'praktijkmanagement')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('praktijkmanagement.userroles')"
+                                :active="request()->routeIs('praktijkmanagement.userroles')">
+                        {{ __('Gebruikersrollen') }}
+                    </x-nav-link>
+                </div>
+                @endif
+
             </div>
 
             <!-- Settings Dropdown -->
